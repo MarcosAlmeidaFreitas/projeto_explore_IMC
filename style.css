@@ -1,0 +1,30 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root{
+  font-size: 62.5%;
+
+  --base-color-dark-blue: #040924;
+  --base-color-white: white;
+
+}
+
+body{
+  background-color: var(--base-color-dark-blue);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main{
+  background-color: var(--base-color-white);
+  width: min(42.8rem, 90%);
+  height: min(44rem, 70%);
+  padding: 4.8rem, 6.4rem, 6.4rem;
+  
+}
