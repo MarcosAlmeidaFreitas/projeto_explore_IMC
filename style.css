@@ -7,13 +7,19 @@
 :root{
   font-size: 62.5%;
 
-  --base-color-dark-blue: #040924;
-  --base-color-white: white;
+  --color-dark-blue: #040924;
+  --color-white: white;
+  --color-green: #0C3440;
+  --color-button: #02799D;
+  --color-label: #00453A;
+}
 
+input, button, body, html, label{
+  font-family: 'Roboto', sans-serif;
 }
 
 body{
-  background-color: var(--base-color-dark-blue);
+  background-color: var(--color-dark-blue);
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -22,9 +28,48 @@ body{
 }
 
 main{
-  background-color: var(--base-color-white);
+  background-color: var(--color-white);
   width: min(42.8rem, 90%);
   height: min(44rem, 70%);
-  padding: 4.8rem, 6.4rem, 6.4rem;
+  padding: 4.8rem 6.4rem 6.4rem 6.4rem;
+  gap: 1.6rem;
+}
+
+main h1{
+  color: var(--color-green);
+  font-weight: 700;
+  font-size: 3.2rem;
+  line-height: 4rem;
+}
+
+main form{
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: 3.2rem;
+}
+
+button{
+  padding: 1.6rem;
+  background-color: var(--color-button);
+  border: none;
+  color: var(--color-white);
+  margin-top: 1.6rem;
+}
+
+input{
+  display: flex;
+  padding: 1rem;
+  height: 5.2rem;
+}
+
+label{
+  font-size: 1.4rem;
+  line-height: 1.8rem;
   
 }
+
+label:nth-child(2){
+  margin-top: 1.6rem;
+}
+
+
