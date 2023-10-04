@@ -1,26 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+  <!-- Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- meta -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IMC</title>
+
+  <!-- Style -->
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Script -->
+  <script src="main.js" defer></script>
 </head>
 <body>
-  <script src="main.js"></script>
-  <main>
-    <h1>Cálculo de IMC</h1>
-    <form>
-      <label for="weight">Peso (KG)</label>
-      <input type="number" name="weight" id="">
-      <label for="height">Altura (m)</label>
-      <input type="number" name="height">
+  <div class="alert-error">
+    <p>Digite somente números</p>
+  </div>
 
-      <button>Calcular IMC</button>
-    </form>
-  </main>
+
+  <div class="container">
+    <main class="card">
+      <h1 class="title">Cálculo de IMC</h1>
+      <form>
+        <label for="weight">Peso (KG)</label>
+        <input type="number" name="weight" id="input_weight" placeholder="60">
+
+        <label id="label_altura" for="height">Altura (M)</label>
+        <input type="number" name="height" id="input_height" placeholder="160">
+  
+        <button id="btn_calc">Calcular IMC 
+          <img src="./assets/arrow.svg" alt="Seta apontando para direita">
+        </button>
+      </form>
+    </main>
+  </div>
+
+  
+  <div class="modal-wrapper">
+    <div class="modal card">
+      <button class="close" id="btn_close"> 
+        <img src="./assets/close.svg" alt="botão para fechar pop-up"> 
+      </button>
+      <h2>testando app</h2>
+    </div>
+  </div>
 </body>
 </html>

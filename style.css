@@ -10,36 +10,52 @@
   --color-dark-blue: #040924;
   --color-white: white;
   --color-green: #0C3440;
-  --color-button: #02799D;
+  --color-button: #022d3a;
+  --color-button-hover: #015771; 
   --color-label: #00453A;
+
+  --color-input-text-color: #212529;
+  --color-input-placeholder:  rgba(73, 80, 87, 0.50);
+  --color-input-background: #DCE2E9;
+  --color-input-border: #02799D;
+
+  --color-background-message-error: #F03E3E;
 }
 
 input, button, body, html, label{
   font-family: 'Roboto', sans-serif;
+  line-height: 2rem;
+  font-size: 1.6rem;
 }
 
 body{
   background-color: var(--color-dark-blue);
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-main{
+.container{
+  display: grid;
+  height: 100vh;
+  place-content: center;
+}
+
+/* Usado para o form e para o pop-up */
+.card{
   background-color: var(--color-white);
-  width: min(42.8rem, 90%);
-  height: min(44rem, 70%);
+  max-width: 42.8rem;
+  margin-inline: auto;
   padding: 4.8rem 6.4rem 6.4rem 6.4rem;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.10);
+  border-radius: 0.6rem;
   gap: 1.6rem;
 }
 
-main h1{
+/* Usado tanto para o titulo do form e para o texto do pop-up */
+.title{
   color: var(--color-green);
   font-weight: 700;
   font-size: 3.2rem;
   line-height: 4rem;
+  text-align: center;
 }
 
 main form{
@@ -48,28 +64,111 @@ main form{
   margin-top: 3.2rem;
 }
 
-button{
+form button{
   padding: 1.6rem;
   background-color: var(--color-button);
   border: none;
   color: var(--color-white);
-  margin-top: 1.6rem;
+  margin-top: 3.2rem;
+  
+  font-weight: bold;
+  border-radius: 0.4rem;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+form button:hover{
+  background-color: var(--color-button-hover);
+  animation: myAnim 0.8s ease 0s 1 normal forwards;
+  animation-delay: 0.5s;
 }
 
 input{
   display: flex;
   padding: 1rem;
   height: 5.2rem;
+  background-color: var(--color-input-background);
+  border: 1px solid var(--color-input-border);
+  border-radius: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+input::placeholder{
+  color:  var(--color-input-placeholder);
+}
+
+input:focus{
+  outline: 2px solid var(--color-input-border);
 }
 
 label{
   font-size: 1.4rem;
   line-height: 1.8rem;
-  
+  color: var(--color-label);
 }
 
-label:nth-child(2){
+#label_altura{
   margin-top: 1.6rem;
 }
 
+/* Configurações do Modal POP_UP */
+.modal-wrapper{
+  position: absolute;
+  /* inset é o mesmo que right, left, top, down tudo junto */
+  inset: 0; 
+  background: rgba(0, 0, 0, 0.70);
+  
+  display: grid;
+  place-content: center;
+  
+  opacity: 0;
+  visibility: hidden;
+} 
 
+.modal-wrapper.open{
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal{
+  position: relative;
+}
+
+/* Config para o botão x (img) do modal  */
+.modal button{
+  background: none;
+  border: #015771;
+
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+
+  cursor: pointer;
+}
+
+.modal button:hover{
+  transform: scale(1.4);
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+  animation-delay: 0.05s;
+}
+
+/* Alert error  */
+.alert-error{
+  position: absolute;
+  background-color: var(--color-background-message-error);
+}
+
+@keyframes myAnim {
+	0% {
+		transform: scale(1);
+	}
+
+	100% {
+		transform: scale(1.05);
+	}
+}
