@@ -157,12 +157,35 @@ label{
   animation-delay: 0.05s;
 }
 
-/* Alert error  */
+/* caixa do alert error, setada normalmente como invisível*/
 .alert-error{
   position: absolute;
   background-color: var(--color-background-message-error);
+  top:0;
+  right: 0;
+  left: 0;
+  color: var(--color-white);
+  text-align: center;
+  padding: 0.8rem 0rem;
+  font-weight: 700;
+  
+
+  /* Deixando a caixa invisível */
+  visibility: hidden;
+  opacity: 0;
+
+  /* Fazendo com que ela apareça descendo  */
+  animation: slideBottom 1.6s ease 0.5ms 1 normal forwards;
 }
 
+/* Classe para deixar o alert visível, as duas classes devem ser escritas juntas
+sem espaço */
+.alert-error.open{
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Animação para aumentar o botão */
 @keyframes myAnim {
 	0% {
 		transform: scale(1);
@@ -170,5 +193,16 @@ label{
 
 	100% {
 		transform: scale(1.05);
+	}
+}
+
+/* Animação para descer o alert erro */
+@keyframes slideBottom {
+	0% {
+		transform: translateY(-30px);
+	}
+
+	100% {
+		transform: translateY(0px);
 	}
 }
