@@ -1,25 +1,11 @@
+import { Modal } from "./modal.js";
+
 const form = document.querySelector('form');
 const input_weight = document.querySelector('#input_weight');
 const input_height = document.querySelector('#input_height');
 const btn_calc = document.querySelector('#btn_calc');
 
 
-
-
-const Modal = {
-  wrapper: document.querySelector('.modal-wrapper'),
-  message1: document.querySelector('#message1'),
-  message2: document.querySelector('#message2'),
-  btn_close: document.querySelector('#btn_close'),
-
-  open(){
-    Modal.wrapper.classList.add('open');
-  },
-
-  close(){
-    Modal.wrapper.classList.remove('open');
-  }
-}
 
 form.onsubmit = function(event){
   event.preventDefault();
@@ -32,13 +18,7 @@ form.onsubmit = function(event){
   Modal.open();
   Modal.message1.innerText = message1;
   Modal.message2.innerText = message2;
-  
 }
-
-Modal.btn_close.addEventListener('click', ()=>{
-  Modal.close();
-});
-
 
 function calcular_IMC(weigth, heigth){
   return (weigth / ((heigth / 100) ** 2)).toFixed(2);
